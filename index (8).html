@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Confirmação de Pagamento • Cigana Maria</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1335714198502295');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1335714198502295&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --bg:#0a0710;
+      --bg2:#120b1c;
+      --card:#15101f;
+      --card2:#1b1429;
+      --line:rgba(255,255,255,0.08);
+      --gold:#e7c66b;
+      --gold2:#caa84a;
+      --purple:#7c5cff;
+      --green:#2fe07a;
+      --green2:#19c466;
+      --text:#f4f1fa;
+      --muted:rgba(244,241,250,0.55);
+      --muted2:rgba(244,241,250,0.40);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+    html,body{
+      width:100%;min-height:100%;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(124,92,255,0.18), transparent 60%),
+        radial-gradient(900px 500px at 50% 110%, rgba(231,198,107,0.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      -webkit-text-size-adjust:100%;
+      overflow-x:hidden;overscroll-behavior:none;touch-action:pan-y;
+    }
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px;}
+    .card{
+      width:min(440px,94vw);
+      background:linear-gradient(180deg,var(--card) 0%,var(--card2) 100%);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px 22px 18px;
+      box-shadow:0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(124,92,255,0.06) inset;
+      position:relative;overflow:hidden;
+    }
+    .card::before{
+      content:"";position:absolute;inset:0 0 auto 0;height:3px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      opacity:.7;
+    }
+
+    /* Brand */
+    .brand{display:flex;align-items:center;gap:11px;justify-content:center;margin-bottom:6px;}
+    .brand .crystal{
+      width:38px;height:38px;border-radius:11px;
+      background:linear-gradient(145deg,rgba(124,92,255,0.25),rgba(231,198,107,0.18));
+      border:1px solid rgba(231,198,107,0.35);
+      display:flex;align-items:center;justify-content:center;font-size:20px;
+    }
+    .brand .name{font-size:15px;font-weight:800;letter-spacing:.3px;}
+    .brand .name span{color:var(--gold);}
+
+    .secure-pill{
+      display:flex;align-items:center;gap:6px;justify-content:center;
+      margin:10px auto 18px;width:fit-content;
+      padding:5px 12px;border-radius:999px;
+      background:rgba(47,224,122,0.08);border:1px solid rgba(47,224,122,0.25);
+      font-size:11.5px;font-weight:700;color:var(--green);letter-spacing:.2px;
+    }
+    .secure-pill svg{width:13px;height:13px;}
+
+    .hello{text-align:center;font-size:13px;color:var(--muted);margin-bottom:4px;}
+    .hello b{color:var(--text);}
+    .title{text-align:center;font-size:18px;font-weight:800;line-height:1.4;margin-bottom:18px;}
+
+    /* Transaction box */
+    .tx{
+      background:rgba(0,0,0,0.25);
+      border:1px solid var(--line);
+      border-radius:16px;padding:16px;margin-bottom:16px;
+    }
+    .tx-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;}
+    .tx-row+.tx-row{border-top:1px dashed rgba(255,255,255,0.07);}
+    .tx-label{font-size:12.5px;color:var(--muted);}
+    .tx-val{font-size:13.5px;font-weight:700;text-align:right;}
+    .tx-val.big{font-size:22px;font-weight:900;color:var(--gold);}
+    .tx-status{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:11.5px;font-weight:700;color:#ffcf6b;
+      background:rgba(231,198,107,0.10);border:1px solid rgba(231,198,107,0.25);
+      padding:3px 9px;border-radius:999px;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:#ffcf6b;animation:blink 1.2s infinite;}
+    @keyframes blink{50%{opacity:.3;}}
+
+    /* Button */
+    .btn{
+      width:100%;padding:17px;font-size:17px;font-weight:900;letter-spacing:.3px;
+      border:none;border-radius:14px;color:#04200f;cursor:pointer;
+      background:linear-gradient(180deg,var(--green) 0%,var(--green2) 100%);
+      box-shadow:0 14px 30px rgba(25,196,102,0.30),0 0 0 1px rgba(0,0,0,0.25) inset;
+      position:relative;overflow:hidden;touch-action:manipulation;
+      display:flex;align-items:center;justify-content:center;gap:9px;
+      animation:pulse 1.8s ease-in-out infinite;margin-top:2px;
+    }
+    .btn svg{width:18px;height:18px;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.018);}}
+    .btn::before{
+      content:"";position:absolute;top:-2px;left:-55%;width:40%;height:calc(100% + 4px);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent);
+      transform:skewX(-18deg);animation:shine 2.8s ease-in-out infinite;
+    }
+    @keyframes shine{0%{left:-55%;opacity:0;}25%{opacity:.6;}50%{left:120%;opacity:0;}100%{left:120%;opacity:0;}}
+    .btn:active{transform:scale(.98);}
+    .btn:disabled{cursor:default;opacity:.9;animation:none;}
+    .btn .spinner{
+      width:18px;height:18px;border:2.5px solid rgba(4,32,15,0.3);
+      border-top-color:#04200f;border-radius:50%;animation:spin .7s linear infinite;display:none;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+
+    /* verifying steps */
+    .steps{margin-top:14px;display:none;}
+    .step{
+      display:flex;align-items:center;gap:10px;padding:7px 2px;font-size:12.5px;color:var(--muted2);
+      opacity:.4;transition:opacity .3s,color .3s;
+    }
+    .step.active{opacity:1;color:var(--text);}
+    .step.done{opacity:1;color:var(--green);}
+    .step .ic{
+      width:20px;height:20px;border-radius:50%;flex:0 0 20px;
+      border:2px solid currentColor;display:flex;align-items:center;justify-content:center;
+    }
+    .step .ic svg{width:11px;height:11px;}
+    .step .mini-spin{
+      width:14px;height:14px;border:2px solid rgba(255,255,255,0.2);
+      border-top-color:var(--text);border-radius:50%;animation:spin .7s linear infinite;
+    }
+
+    /* trust footer */
+    .trust{
+      display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+      margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+    }
+    .trust .t{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--muted2);font-weight:600;}
+    .trust .t svg{width:12px;height:12px;}
+    .footnote{text-align:center;font-size:10px;color:var(--muted2);margin-top:12px;line-height:1.5;}
+
+    /* success overlay */
+    .overlay{
+      position:fixed;inset:0;background:rgba(5,3,10,0.88);backdrop-filter:blur(6px);
+      display:flex;align-items:center;justify-content:center;z-index:99;padding:20px;
+      opacity:0;pointer-events:none;transition:opacity .35s ease;
+    }
+    .overlay.show{opacity:1;pointer-events:all;}
+    .popup{
+      background:linear-gradient(180deg,var(--card) 0%,var(--card2) 100%);
+      border:1px solid rgba(47,224,122,0.28);border-radius:22px;
+      padding:38px 28px 26px;text-align:center;width:min(380px,92vw);
+      transform:scale(.85) translateY(10px);transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+      box-shadow:0 30px 80px rgba(0,0,0,.6);
+    }
+    .overlay.show .popup{transform:scale(1) translateY(0);}
+    .check-circle{
+      width:84px;height:84px;border-radius:50%;margin:0 auto 20px;
+      background:radial-gradient(circle,rgba(47,224,122,0.18),rgba(47,224,122,0.04));
+      border:2px solid var(--green);display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 38px rgba(47,224,122,0.30);
+    }
+    .check-circle svg{width:40px;height:40px;stroke:var(--green);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+      stroke-dasharray:30;stroke-dashoffset:30;animation:draw .5s .25s forwards ease;}
+    @keyframes draw{to{stroke-dashoffset:0;}}
+    .popup-title{font-size:21px;font-weight:900;margin-bottom:8px;}
+    .popup-sub{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:18px;}
+    .receipt{
+      background:rgba(0,0,0,0.25);border:1px solid var(--line);border-radius:14px;
+      padding:14px 16px;text-align:left;
+    }
+    .receipt .r{display:flex;justify-content:space-between;padding:5px 0;font-size:12px;}
+    .receipt .r .k{color:var(--muted);}
+    .receipt .r .v{font-weight:700;}
+    .receipt .r .v.g{color:var(--green);}
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="card">
+
+      <div class="brand">
+        <div class="crystal">🔮</div>
+        <div class="name">Cigana <span>Maria</span></div>
+      </div>
+
+      <div class="secure-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        AMBIENTE SEGURO E CRIPTOGRAFADO
+      </div>
+
+      <div class="hello" id="hello"></div>
+      <div class="title">Confirme o pagamento dos seus materiais</div>
+
+      <div class="tx">
+        <div class="tx-row">
+          <span class="tx-label">Descrição</span>
+          <span class="tx-val">Materiais • Cigana Maria</span>
+        </div>
+        <div class="tx-row">
+          <span class="tx-label">Forma de pagamento</span>
+          <span class="tx-val">Pix</span>
+        </div>
+        <div class="tx-row">
+          <span class="tx-label">Status</span>
+          <span class="tx-status" id="statusPill"><span class="dot"></span> Aguardando confirmação</span>
+        </div>
+        <div class="tx-row">
+          <span class="tx-label">Valor</span>
+          <span class="tx-val big" id="valor">R$ 40,00</span>
+        </div>
+      </div>
+
+      <button class="btn" id="btnConfirmar" onclick="confirmarPagamento()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span class="btn-label">Confirmar Pagamento</span>
+        <span class="spinner"></span>
+      </button>
+
+      <div class="steps" id="steps">
+        <div class="step" data-step="0"><span class="ic"><span class="mini-spin"></span></span> Conectando ao servidor seguro</div>
+        <div class="step" data-step="1"><span class="ic"><span class="mini-spin"></span></span> Validando sua transação</div>
+        <div class="step" data-step="2"><span class="ic"><span class="mini-spin"></span></span> Confirmando pagamento</div>
+      </div>
+
+      <div class="trust">
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SSL 256-bit</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Dados protegidos</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Verificação 24h</span>
+      </div>
+
+      <div class="footnote">Transação protegida. Ao confirmar, você declara que o pagamento via Pix foi realizado. Protocolo gerado automaticamente.</div>
+
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="popup-title">Pagamento confirmado!</div>
+      <div class="popup-sub">Recebemos sua confirmação. Tudo pronto para finalizarmos o seu trabalho. 🙏</div>
+      <div class="receipt">
+        <div class="r"><span class="k">Valor</span><span class="v g" id="rValor">R$ 40,00</span></div>
+        <div class="r"><span class="k">Protocolo</span><span class="v" id="rProto">—</span></div>
+        <div class="r"><span class="k">Data / Hora</span><span class="v" id="rData">—</span></div>
+        <div class="r"><span class="k">Status</span><span class="v g">Confirmado</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // bloqueia zoom/gestos
+    document.addEventListener('gesturestart', e => e.preventDefault(), {passive:false});
+    document.addEventListener('gesturechange', e => e.preventDefault(), {passive:false});
+    document.addEventListener('wheel', e => { if(e.ctrlKey) e.preventDefault(); }, {passive:false});
+
+    // ---- parâmetros da URL ----
+    const params = new URLSearchParams(location.search);
+    const VALORES_OK = [40, 70, 67, 97];
+    let valor = parseInt(params.get('v'), 10);
+    if (!VALORES_OK.includes(valor)) valor = 40; // fallback seguro
+    const nome = (params.get('nome') || '').trim();
+    const leadId = (params.get('id') || '').trim();
+
+    const fmt = (n) => 'R$ ' + n.toFixed(2).replace('.', ',');
+    document.getElementById('valor').textContent = fmt(valor);
+    document.getElementById('rValor').textContent = fmt(valor);
+    if (nome) {
+      document.getElementById('hello').innerHTML = 'Olá, <b>' + nome.replace(/[<>]/g,'') + '</b> 👋';
+    }
+
+    function gerarProtocolo(){
+      const d = new Date();
+      const p = (x)=>String(x).padStart(2,'0');
+      const rnd = Math.random().toString(36).slice(2,6).toUpperCase();
+      return 'CGM-' + d.getFullYear() + p(d.getMonth()+1) + p(d.getDate()) + '-' + rnd;
+    }
+
+    let jaClicou = false;
+
+    function confirmarPagamento(){
+      if (jaClicou) return;
+      jaClicou = true;
+
+      const btn = document.getElementById('btnConfirmar');
+      btn.disabled = true;
+      btn.querySelector('.btn-label').textContent = 'Verificando...';
+      btn.querySelector('svg').style.display = 'none';
+      btn.querySelector('.spinner').style.display = 'inline-block';
+      document.getElementById('steps').style.display = 'block';
+
+      // ---- TRACKING (igual hoje) ----
+      try {
+        fbq('track', 'Purchase', { value: valor, currency: 'BRL' });
+      } catch(e){}
+
+      try {
+        const txt = encodeURIComponent((nome ? nome + ' • ' : '') + fmt(valor) + (leadId ? ' • ' + leadId : ''));
+        fetch("https://api.pushcut.io/7MtRkz108A2L2W0rhVgFB/notifications/Venda%20CGM%20%F0%9F%92%B0?text=" + txt, {
+          method: "POST", mode: "no-cors", keepalive: true
+        });
+      } catch(e){}
+
+      // ---- animação de verificação (sensação de processo real) ----
+      const steps = [...document.querySelectorAll('.step')];
+      const markActive = (i)=>{ steps[i].classList.add('active'); };
+      const markDone = (i)=>{
+        steps[i].classList.remove('active'); steps[i].classList.add('done');
+        steps[i].querySelector('.ic').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      };
+
+      markActive(0);
+      setTimeout(()=>{ markDone(0); markActive(1); }, 850);
+      setTimeout(()=>{ markDone(1); markActive(2); }, 1750);
+      setTimeout(()=>{ markDone(2); }, 2550);
+
+      setTimeout(finalizar, 2900);
+    }
+
+    function finalizar(){
+      const proto = gerarProtocolo();
+      const agora = new Date().toLocaleString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+      document.getElementById('rProto').textContent = proto;
+      document.getElementById('rData').textContent = agora;
+
+      const pill = document.getElementById('statusPill');
+      pill.innerHTML = '✓ Confirmado';
+      pill.style.color = 'var(--green)';
+      pill.style.background = 'rgba(47,224,122,0.10)';
+      pill.style.borderColor = 'rgba(47,224,122,0.30)';
+
+      document.getElementById('overlay').classList.add('show');
+    }
+  </script>
+
+</body>
+</html>
